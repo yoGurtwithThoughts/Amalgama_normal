@@ -83,7 +83,6 @@ namespace Amalgama.View.Pages
             backgroundStoryboard.Children.Add(backgroundFadeInAnimation);
             backgroundStoryboard.Children.Add(backgroundTranslateAnimation);
 
-            
             var bannerFadeInAnimation = new DoubleAnimation
             {
                 From = 0,
@@ -110,9 +109,52 @@ namespace Amalgama.View.Pages
             bannerStoryboard.Children.Add(bannerFadeInAnimation);
             bannerStoryboard.Children.Add(bannerTranslateAnimation);
 
+           
+            var moreButtonFadeInAnimation = new DoubleAnimation
+            {
+                From = 0,
+                To = 1,
+                Duration = new Duration(TimeSpan.FromSeconds(1)),
+                BeginTime = TimeSpan.FromSeconds(3)
+            };
+
+            var moreButtonTranslateAnimation = new DoubleAnimation
+            {
+                From = -50,
+                To = 0,
+                Duration = new Duration(TimeSpan.FromSeconds(1)),
+                BeginTime = TimeSpan.FromSeconds(3)
+            };
+
+            Storyboard.SetTarget(moreButtonFadeInAnimation, moreButton);
+            Storyboard.SetTargetProperty(moreButtonFadeInAnimation, new PropertyPath(TextBlock.OpacityProperty));
+
+            Storyboard.SetTarget(moreButtonTranslateAnimation, moreButton);
+            Storyboard.SetTargetProperty(moreButtonTranslateAnimation, new PropertyPath("(UIElement.RenderTransform).(TranslateTransform.X)"));
+
+            var moreButtonStoryboard = new Storyboard();
+            moreButtonStoryboard.Children.Add(moreButtonFadeInAnimation);
+            moreButtonStoryboard.Children.Add(moreButtonTranslateAnimation);
+
             textBlockStoryboard.Begin(this);
             backgroundStoryboard.Begin(this);
             bannerStoryboard.Begin(this);
+            moreButtonStoryboard.Begin(this);
+        }
+
+        private void SignButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void VK_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void TG_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
         }
     }
     }

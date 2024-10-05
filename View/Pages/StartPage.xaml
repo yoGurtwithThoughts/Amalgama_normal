@@ -7,7 +7,8 @@
       xmlns:svgc1="http://sharpvectors.codeplex.com/svgc" xmlns:local1="clr-namespace:Amalgama.UserControls"
       mc:Ignorable="d" 
       Loaded="Page_Loaded"
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="450"
+      d:DesignWidth="800"
       Title="StartPage">
     <Border>
         <Grid>
@@ -45,7 +46,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="25"/>
                     <RowDefinition Height="*"/>
-                    <RowDefinition Height="35"/>
+                    <RowDefinition Height="45"/>
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
                     <Canvas>
@@ -65,8 +66,10 @@
                 </Grid>
                 <Grid Grid.Row="1">
                     <StackPanel Orientation="Vertical"
-                               Height="200"
+                                VerticalAlignment="Bottom"
+                               Height="550"
                                Width="200"
+                                HorizontalAlignment="Center"
                                 x:Name="AnimatedBlock"
                                 Opacity="0"
                                 RenderTransformOrigin="0.5,0.5">
@@ -85,6 +88,38 @@
                                    TextWrapping="Wrap"
                                    Foreground="Black"
                         Style="{StaticResource TitleMain}"/>
+                        <Button x:Name="SignButton"
+         Style="{StaticResource ButtonSt1}"
+         Content="ЗАПИСАТЬСЯ"
+         Click="SignButton_Click"
+         Margin="0 45 "
+                               HorizontalAlignment="Left"/>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <StackPanel
+                        Margin="25 0 0 0"
+                        Orientation="Horizontal"
+                        Height="230"
+                        x:Name="moreButton"
+                        Opacity="0"
+                        RenderTransformOrigin="0.5,0.5">
+                        <StackPanel.RenderTransform>
+                            <TranslateTransform x:Name="MoreButtonTranslateTransform" X="-50" Y="0" />
+                        </StackPanel.RenderTransform>
+                        <Border x:Name="VK"
+                                MouseDown="VK_MouseDown"
+                                VerticalAlignment="Top" Height="41">
+                            <Image Source="/Images/black.png" 
+                               />
+                        </Border>
+                        <Border Width="7.8"></Border>
+                        <Border x:Name="TG"
+                           MouseDown="TG_MouseDown">
+                            <Image Source="/Images/black1.png" 
+                                   Height="41"
+                                   VerticalAlignment="Top"/>
+                        </Border>
                     </StackPanel>
                 </Grid>
             </Grid>
