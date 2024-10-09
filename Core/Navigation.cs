@@ -11,7 +11,7 @@ namespace Amalgama.Core
     {
         public static class CoreNavigate
         {
-            public static Frame NavigatorCore { get; set; }
+            public static Frame? NavigatorCore { get; set; }
         }
     }
 }

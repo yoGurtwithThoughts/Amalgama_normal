@@ -13,6 +13,8 @@
                                  SecondaryColor="{x:Null}" />
                 <ResourceDictionary Source="/Styles/ButtonStyle1.xaml"/>
                 <ResourceDictionary Source="/Styles/MainTitile.xaml"/>
+                <ResourceDictionary Source="/Styles/ButtonStyle2.xaml"/>
+                <ResourceDictionary Source="/Styles/Slider.xaml"/>
             </ResourceDictionary.MergedDictionaries>
            
         </ResourceDictionary>

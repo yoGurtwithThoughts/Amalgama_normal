@@ -1,4 +1,5 @@
-﻿using Amalgama.View.Pages;
+﻿using Amalgama.Core;
+using Amalgama.View.Pages;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -9,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 using static Amalgama.Core.Navigation;
 
 namespace Amalgama
@@ -18,10 +20,11 @@ namespace Amalgama
     /// </summary>
     public partial class MainWindow : Window
     {
+       
         public MainWindow()
         {
             InitializeComponent(); InitializeComponent();
-
+            
             CoreNavigate.NavigatorCore = MainFrame;
             MainFrame.Navigate(new StartPage());
         }
