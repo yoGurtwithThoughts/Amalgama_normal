@@ -26,22 +26,74 @@ namespace Amalgama.View.Pages
         private DispatcherTimer _timer;
         private int _contentIndex;
         private List<UIElement> _contentItems;
+        private string[] _messages = { "1", "2", "3", "4" };
+        private string[] _colorsHex = { "#840000", "#D9D9D9", "#D9D9D9", "#D9D9D9" };
 
         public StartPage()
         {
             InitializeComponent();
             InitializeTimer();
+            CreateCircles();
             InitializeContentItems();
+            TextBlock textBlock = new TextBlock();
         }
+
+        private void CreateCircles()
+        {
+           
+                for (int i = 0; i < _colorsHex.Length; i++)
+                {
+                    
+                    Ellipse ellipse = new Ellipse
+                    {
+                        Width = 50,
+                        Height = 50,
+                        Fill = (SolidColorBrush)new BrushConverter().ConvertFromString(_colorsHex[i]),
+                        Margin = new Thickness(0.5)
+                    };
+                    CirclesPanel.Children.Add(ellipse);
+                }
+
+        }
+        private void StartTimer()
+        {
+            _timer = new DispatcherTimer();
+            _timer.Interval = TimeSpan.FromSeconds(2); 
+            _timer.Tick += UpdateText;
+            _timer.Start();
+
+        }
+        private void UpdateText(object? sender, EventArgs e)
+        {
+            ContentTxt.Text = _messages[_contentIndex];
+            _contentIndex = (_contentIndex + 1) % _messages.Length;
+        }
+
+
         private void InitializeContentItems()
         {
             Style titleMainStyle = (Style)FindResource("SliderBar");
 
             _contentItems = new List<UIElement> {
-            new TextBlock { Text = "Татуировщики рекомендуют\nделать татуировки, а так же пирсинг,\nне в жаркое время\nгода т. е. осенью ,зимой, весной! ", TextWrapping=TextWrapping.Wrap, Style = titleMainStyle  },
+            new TextBlock { TextWrapping = TextWrapping.Wrap,
+            Style = titleMainStyle,
+            Inlines =
+            {
+                new Run("Когда стоит делать тату?") { FontWeight = FontWeights.Bold },
+                new LineBreak(),
+                new Run("\nТатуировщики рекомендуют делать татуировки, а также пирсинг, не в жаркое время года, т. е. осенью, зимой, весной!")
+            }
+        },
+        new TextBlock
+        {
+            Text = "New content",
+            TextWrapping = TextWrapping.Wrap,
+            Style = titleMainStyle
+        },
             new TextBlock { Text = "New content ", TextWrapping=TextWrapping.Wrap , Style = titleMainStyle  },
             };
-          }  
+
+        }  
 
         private void InitializeTimer()
         {
@@ -55,10 +107,11 @@ namespace Amalgama.View.Pages
             _contentIndex = (_contentIndex + 1) % _contentItems.Count;
             Contentstack.Children.Clear();
             Contentstack.Children.Add(_contentItems[_contentIndex]);
+            _contentIndex = (_contentIndex + 1) % _contentItems.Count;
         }
-
        
-    private void DraverButton_MouseDown(object sender, MouseButtonEventArgs e)
+
+        private void DraverButton_MouseDown(object sender, MouseButtonEventArgs e)
         {
 
         }
@@ -92,6 +145,48 @@ namespace Amalgama.View.Pages
             var textBlockStoryboard = new Storyboard();
             textBlockStoryboard.Children.Add(textBlockFadeInAnimation);
             textBlockStoryboard.Children.Add(textBlockTranslateAnimation);
+
+            var textBlockFadeInAnimation1 = new DoubleAnimation
+            {
+                From = 0,
+                To = 1,
+                Duration = new Duration(TimeSpan.FromSeconds(1))
+            };
+
+            var textBlockTranslateAnimation1 = new DoubleAnimation
+            {
+                From = -50,
+                To = 0,
+                Duration = new Duration(TimeSpan.FromSeconds(1))
+            };
+
+            Storyboard.SetTarget(textBlockFadeInAnimation1, Contentstack);
+            Storyboard.SetTargetProperty(textBlockFadeInAnimation1, new PropertyPath(TextBlock.OpacityProperty));
+
+            Storyboard.SetTarget(textBlockTranslateAnimation1, Contentstack);
+            Storyboard.SetTargetProperty(textBlockTranslateAnimation1, new PropertyPath("(UIElement.RenderTransform).(TranslateTransform.X)"));
+            var textBlockFadeInAnimation2 = new DoubleAnimation
+            {
+                From = 0,
+                To = 1,
+                Duration = new Duration(TimeSpan.FromSeconds(1))
+            };
+
+            var textBlockTranslateAnimation2 = new DoubleAnimation
+            {
+                From = -50,
+                To = 0,
+                Duration = new Duration(TimeSpan.FromSeconds(1))
+            };
+
+            Storyboard.SetTarget(textBlockFadeInAnimation2, Contentstack);
+            Storyboard.SetTargetProperty(textBlockFadeInAnimation2, new PropertyPath(TextBlock.OpacityProperty));
+
+            Storyboard.SetTarget(textBlockTranslateAnimation2, Contentstack);
+            Storyboard.SetTargetProperty(textBlockTranslateAnimation1, new PropertyPath("(UIElement.RenderTransform).(TranslateTransform.X)"));
+            var textBlockStoryboard1 = new Storyboard();
+            textBlockStoryboard.Children.Add(textBlockFadeInAnimation1);
+            textBlockStoryboard.Children.Add(textBlockTranslateAnimation1);
 
             var backgroundFadeInAnimation = new DoubleAnimation
             {
@@ -145,7 +240,21 @@ namespace Amalgama.View.Pages
             bannerStoryboard.Children.Add(bannerFadeInAnimation);
             bannerStoryboard.Children.Add(bannerTranslateAnimation);
 
-           
+            var textBlockTranslateAnimation3 = new DoubleAnimation
+            {
+                From = -50,
+                To = 0,
+                Duration = new Duration(TimeSpan.FromSeconds(1))
+            };
+
+            Storyboard.SetTarget(textBlockFadeInAnimation2, Other);
+            Storyboard.SetTargetProperty(textBlockFadeInAnimation2, new PropertyPath(TextBlock.OpacityProperty));
+
+            Storyboard.SetTarget(textBlockTranslateAnimation2, Other);
+            Storyboard.SetTargetProperty(textBlockTranslateAnimation2, new PropertyPath("(UIElement.RenderTransform).(TranslateTransform.X)"));
+            var textBlockStoryboard3 = new Storyboard();
+            textBlockStoryboard.Children.Add(textBlockFadeInAnimation2);
+            textBlockStoryboard.Children.Add(textBlockTranslateAnimation2);
             var moreButtonFadeInAnimation = new DoubleAnimation
             {
                 From = 0,
@@ -171,6 +280,8 @@ namespace Amalgama.View.Pages
             var moreButtonStoryboard = new Storyboard();
             moreButtonStoryboard.Children.Add(moreButtonFadeInAnimation);
             moreButtonStoryboard.Children.Add(moreButtonTranslateAnimation);
+            
+
 
             var borderFadeInAnimation = new DoubleAnimation
             {
@@ -212,12 +323,12 @@ namespace Amalgama.View.Pages
 
         private void SignButton_Click(object sender, RoutedEventArgs e)
         {
-
+            CoreNavigate.NavigatorCore.Navigate(new RecordPage());
         }
 
         private void VK_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            CoreNavigate.NavigatorCore.Navigate(new RecordPage());
+           
         }
 
         private void TG_MouseDown(object sender, MouseButtonEventArgs e)
@@ -233,6 +344,11 @@ namespace Amalgama.View.Pages
         private void SButton_Click(object sender, RoutedEventArgs e)
         {
             CoreNavigate.NavigatorCore.Navigate(new MastersPage());
+        }
+
+        private void Close_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
     }

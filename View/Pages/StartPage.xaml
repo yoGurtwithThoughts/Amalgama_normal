@@ -138,7 +138,7 @@
                    Height="853"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Stretch">
-                    <Image Source="/Images/mainBanner.png" 
+                    <Image Source="/Images/mBanner.png" 
                           VerticalAlignment="Top"
                            x:Name="animated_Banner"
                           HorizontalAlignment="Stretch"
@@ -152,16 +152,16 @@
             </Grid>
             <Grid Grid.Column="3">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="55"/>
                     <RowDefinition Height="*"/>
-                    <RowDefinition Height="35"/>
+                    <RowDefinition Height="355"/>
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
                     <Border x:Name="Animated_Service"
                              RenderTransformOrigin="0.5,0.5"
                             HorizontalAlignment="Center">
                         <Border.RenderTransform>
-                            <TranslateTransform x:Name="Animatedbrd" X="0" Y="-50"/>
+                            <TranslateTransform x:Name="Animatedbrd" X="0" Y="-150"/>
                             </Border.RenderTransform>
                         <StackPanel
                             Orientation="Horizontal">
@@ -179,15 +179,61 @@
                 <Grid Grid.Row="1">
                     <StackPanel Orientation="Vertical"
                                 x:Name="Contentstack"
-                                Height="350"
+                                Height="450"
                                 Width="350"
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Center">
-                        <TextBlock 
-                                  x:Name="ContentTxt"
-                                  />
+                        <TextBlock x:Name="ContentTxt"/>
+                        <StackPanel x:Name="CirclesPanel" 
+                                    Orientation="Horizontal" 
+                                    HorizontalAlignment="Center"/>
+                        <StackPanel.RenderTransform>
+                            <TranslateTransform x:Name="TextBlockTranslateTransform1" X="-50" Y="0" />
+                        </StackPanel.RenderTransform>
                     </StackPanel>
                 </Grid>
+                <Grid Grid.Row="2">
+                    <StackPanel HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                x:Name="Other">
+                        <StackPanel.RenderTransform>
+                            <TranslateTransform x:Name="TextBlockTranslateTransform3" X="-50" Y="0" />
+                        </StackPanel.RenderTransform>
+                        <TextBlock Style="{StaticResource ContentTitle}"
+                                   Text="ДОЛГО ЗАЖИВАЕТ?"/>
+                        <TextBlock Style="{StaticResource Content}"
+                                   Text="или не очень..."/>
+                        <TextBlock Style="{StaticResource ContentTitle}"
+            Text="СИЛЬНО БОЛЬНО?"/>
+                        <TextBlock Style="{StaticResource Content}"
+            Text="боязно..."/>
+                        <TextBlock Style="{StaticResource ContentTitle}"
+Text="СКОЛЬКО СТОИТ?"/>
+                        <TextBlock Style="{StaticResource Content}"
+Text="дорого наверное"/>
+                        <TextBlock Style="{StaticResource ContentTitle}"
+Text="НЕТ 18 ЛЕТ?"/>
+                        <TextBlock Style="{StaticResource Content}"
+Text="надежда есть?"/>
+                    </StackPanel>
+                </Grid>
+         </Grid>
+            <Grid Grid.Column="4">
+                <Grid.Background>
+                    <LinearGradientBrush StartPoint="0.5,0.5" EndPoint="0.5,0.5">
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Color="#B8B8B8" Offset="0.15"/>
+                            <GradientStop Color="#DCDCDC" Offset="1.95"/>
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Grid.Background>
+                <Image x:Name="Close"
+           MouseDown="Close_MouseDown"
+           Source="/Images/Closed.png"
+                       Height="15"
+                       Width="15"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Top"/>
             </Grid>
         </Grid>
     </Border>
