@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,5 +25,36 @@ namespace Amalgama.View.Pages
         {
             InitializeComponent();
         }
+
+
+
+        private void Imageclosed_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void AgeAdd_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RecCons_Click(object sender, RoutedEventArgs e)
+        {
+            RecCons.Background = new SolidColorBrush(Color.FromRgb(135, 0, 0)); 
+            Seance.Background = new SolidColorBrush(Colors.Transparent);
+            RecCons.Foreground = new SolidColorBrush(Colors.White);
+            Seance.Foreground = new SolidColorBrush(Colors.Black);
+        }
+
+        private void Seance_Click(object sender, RoutedEventArgs e)
+        {
+            
+            Seance.Background = new SolidColorBrush(Color.FromRgb(95, 0, 0)); 
+            RecCons.Background = new SolidColorBrush(Colors.Transparent);
+            RecCons.Foreground = new SolidColorBrush(Colors.Black);
+            Seance.Foreground = new SolidColorBrush(Colors.White);
+        }
+        }
     }
-}
+    
+

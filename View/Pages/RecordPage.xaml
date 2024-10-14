@@ -6,9 +6,129 @@
       xmlns:local="clr-namespace:Amalgama.View.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="RecordPage">
-
-    <Grid>
+      Title="RecordPage"
+      Background="Transparent">
+    <Border>
         
-    </Grid>
-</Page>
+            <Grid>
+           
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="35"/>
+                    <ColumnDefinition Width="0.25"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="0.25"/>
+                    <ColumnDefinition Width="35"/>
+                </Grid.ColumnDefinitions>
+                <Grid.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Color="#AFAEAE" Offset="0.0"/>
+                            <GradientStop Color="#DCDCDC" Offset="0.25"/>
+                            <GradientStop Color="#DCDCDC" Offset="0.5"/>
+                            <GradientStop Color="#DCDCDC" Offset="0.75"/>
+                            <GradientStop Color="#F2F2F2" Offset="1.0"/>
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Grid.Background>
+                <Grid Grid.Column="0">
+                    <Grid.Background>
+                        <LinearGradientBrush StartPoint="0.5,0.5" EndPoint="0.5,0.5">
+                            <LinearGradientBrush.GradientStops>
+                                <GradientStop Color="#B8B8B8" Offset="0.15"/>
+                                <GradientStop Color="#DCDCDC" Offset="1.95"/>
+                            </LinearGradientBrush.GradientStops>
+                        </LinearGradientBrush>
+                    </Grid.Background>
+                </Grid>
+                <Grid Grid.Column="2" >
+                    <Image Source="/Images/BannerRegisterPage.png"
+                              Stretch="Fill"
+                              Width="850"
+                           Height="850"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                      />
+                    <StackPanel
+                    Height="Auto"
+                    Width="600"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
+                        <Image Source="/Images/recBannerBack.png"
+           Stretch="UniformToFill"
+           Opacity="0.95"
+                  />
+           </StackPanel>
+               
+                </Grid>
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0"/>
+                <Image Source="/Images/AMALGAMA.png" 
+                       Height="25"
+                       />
+                <Grid Grid.Row="1">
+                    <StackPanel Orientation="Horizontal"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Center">
+                        <Button Style="{StaticResource LightButton1}"
+                            Content="МНЕ ЕСТЬ 18  ЛЕТ"></Button>
+                        <Button Style="{StaticResource ButtonSt1}"
+                                Width="35"
+                                Height="32.02"
+                                Content="+"
+                                x:Name="AgeAdd"
+                                Click="AgeAdd_Click"></Button>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <StackPanel Orientation="Horizontal"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Center">
+                        <Button
+                        Style="{StaticResource ButtonSt1}"
+                            Content="СЕАНС"
+                            x:Name="Seance"
+                            Click="Seance_Click"/>
+                        <Button
+ Style="{StaticResource LightButton2}"
+     Content="КОНСУЛЬТАЦИЮ"
+                            x:Name="RecCons"
+                            Click="RecCons_Click"/>
+                    </StackPanel>
+                </Grid>
+
+            </Grid>
+            <Grid Grid.Column="4">
+                    <Grid.Background>
+                        <LinearGradientBrush StartPoint="0.5,0.5" EndPoint="0.5,0.5">
+                            <LinearGradientBrush.GradientStops>
+                                <GradientStop Color="#B8B8B8" Offset="0.15"/>
+                                <GradientStop Color="#DCDCDC" Offset="1.95"/>
+                            </LinearGradientBrush.GradientStops>
+                        </LinearGradientBrush>
+                    </Grid.Background>
+                    <Image Source="/Images/Closed.png"
+                               Name="Imageclosed"
+                               Stretch="Fill"
+                               Height="15"
+                               Width="15"
+                           VerticalAlignment="Top"
+                           HorizontalAlignment="Center"
+                           MouseDown="Imageclosed_MouseDown"/>
+                </Grid>
+            
+        </Grid>
+        
+    </Border>
+</Page> 
+  

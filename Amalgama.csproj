@@ -23,13 +23,8 @@
     <None Remove="Images\LeftImage.jpg" />
     <None Remove="Images\mainBanner.png" />
     <None Remove="Images\mBanner.png" />
+    <None Remove="Images\recBannerBack.png" />
     <None Remove="Images\RightImage.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="Images\BannerRegisterPage.png">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
   </ItemGroup>
 
   <ItemGroup>
@@ -61,6 +56,9 @@
     <Resource Include="Images\bannerbackground.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Images\BannerRegisterPage.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Images\black.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
@@ -80,6 +78,9 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\mBanner.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\recBannerBack.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\RightImage.png">
