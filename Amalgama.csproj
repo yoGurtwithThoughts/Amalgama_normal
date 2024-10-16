@@ -20,9 +20,13 @@
     <None Remove="Images\black1.png" />
     <None Remove="Images\Closed.png" />
     <None Remove="Images\dropMenuIcon.png" />
+    <None Remove="Images\Laura.jpg" />
+    <None Remove="Images\laura.png" />
     <None Remove="Images\LeftImage.jpg" />
     <None Remove="Images\mainBanner.png" />
     <None Remove="Images\mBanner.png" />
+    <None Remove="Images\Nikita.jpg" />
+    <None Remove="Images\NIKITA.png" />
     <None Remove="Images\recBannerBack.png" />
     <None Remove="Images\RightImage.png" />
   </ItemGroup>
@@ -71,6 +75,12 @@
     <Resource Include="Images\dropMenuIcon.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Images\Laura.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\laura.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Images\LeftImage.jpg">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
@@ -78,6 +88,12 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\mBanner.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Nikita.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\NIKITA.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\recBannerBack.png">

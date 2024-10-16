@@ -17,6 +17,9 @@
                 <ResourceDictionary Source="/Styles/ButtonStyle3.xaml"/>
                 <ResourceDictionary Source="/Styles/Slider.xaml"/>
                 <ResourceDictionary Source="/Styles/ContetQwetions.xaml"/>
+                <ResourceDictionary Source="/Styles/OtherTitle.xaml"/>
+                <ResourceDictionary Source="/Styles/TextBoxStyle.xaml"/>
+                <ResourceDictionary Source="/Styles/MastersPfotoContainer.xaml"/>
             </ResourceDictionary.MergedDictionaries>
            
         </ResourceDictionary>
