@@ -338,7 +338,7 @@ namespace Amalgama.View.Pages
 
         private void Service_button_Click(object sender, RoutedEventArgs e)
         {
-
+            CoreNavigate.NavigatorCore.Navigate(new YslugiPage());
         }
 
         private void SButton_Click(object sender, RoutedEventArgs e)

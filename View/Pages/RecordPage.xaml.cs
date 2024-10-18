@@ -60,7 +60,7 @@ namespace Amalgama.View.Pages
             Seance.Background = new SolidColorBrush(Colors.Transparent);
             RecCons.Foreground = new SolidColorBrush(Colors.White);
             Seance.Foreground = new SolidColorBrush(Colors.Black);
-            MessageTextBlock.Text = "Вы выбрали запись на консультацию!";
+            MessageTextBlock.Text = "Вы выбрали запись на консультацию";
             MessageTextBlock.Visibility = Visibility.Visible;
 
 
@@ -74,7 +74,7 @@ namespace Amalgama.View.Pages
             RecCons.Background = new SolidColorBrush(Colors.Transparent);
             RecCons.Foreground = new SolidColorBrush(Colors.Black);
             Seance.Foreground = new SolidColorBrush(Colors.White);
-            MessageTextBlock.Text = "Вы выбрали запись на сеанс!";
+            MessageTextBlock.Text = "Вы выбрали запись на сеанс";
             MessageTextBlock.Visibility = Visibility.Visible;
 
 
@@ -90,7 +90,7 @@ namespace Amalgama.View.Pages
             Tatoo.Foreground = new SolidColorBrush(Colors.White);
             Pirc.Foreground = new SolidColorBrush(Colors.Black);
             Remove.Foreground = new SolidColorBrush(Colors.Black);
-            MessageTextBlock.Text = "Вы выбрали тату!";
+            MessageTextBlock.Text = "Вы выбрали тату";
             MessageTextBlock.Visibility = Visibility.Visible;
 
 
@@ -107,7 +107,7 @@ namespace Amalgama.View.Pages
             Pirc.Foreground = new SolidColorBrush(Colors.White);
             Tatoo.Foreground = new SolidColorBrush(Colors.Black);
             Remove.Foreground = new SolidColorBrush(Colors.Black);
-            MessageTextBlock.Text = "Вы выбрали пирсинг!";
+            MessageTextBlock.Text = "Вы выбрали пирсинг";
             MessageTextBlock.Visibility = Visibility.Visible;
 
 
@@ -123,7 +123,7 @@ namespace Amalgama.View.Pages
             Remove.Foreground = new SolidColorBrush(Colors.White);
             Pirc.Foreground = new SolidColorBrush(Colors.Black);
             Tatoo.Foreground = new SolidColorBrush(Colors.Black);
-            MessageTextBlock.Text = "Вы выбрали сведение татуировки!";
+            MessageTextBlock.Text = "Вы выбрали сведение татуировки";
             MessageTextBlock.Visibility = Visibility.Visible;
 
 
@@ -160,7 +160,7 @@ namespace Amalgama.View.Pages
             Mono.Background = new SolidColorBrush(Colors.Transparent);
             ColorTatoo.Foreground = new SolidColorBrush(Colors.White);
             Mono.Foreground = new SolidColorBrush(Colors.Black);
-            MessageTextBlock.Text = "Вы выбрали цветную тату!";
+            MessageTextBlock.Text = "Вы выбрали цветную тату";
             MessageTextBlock.Visibility = Visibility.Visible;
 
 
@@ -174,7 +174,7 @@ namespace Amalgama.View.Pages
             ColorTatoo.Background = new SolidColorBrush(Colors.Transparent);
             Mono.Foreground = new SolidColorBrush(Colors.White);
             ColorTatoo.Foreground = new SolidColorBrush(Colors.Black);
-            MessageTextBlock.Text = "Вы выбрали ч/б тату!";
+            MessageTextBlock.Text = "Вы выбрали ч/б тату";
             MessageTextBlock.Visibility = Visibility.Visible;
 
 
@@ -194,7 +194,7 @@ namespace Amalgama.View.Pages
 
         private void MastersSelect_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            MessageTextBlock.Text = "Вы выбрали мастра Laura!";
+            MessageTextBlock.Text = "Вы выбрали мастра Laura";
             MessageTextBlock.Visibility = Visibility.Visible;
 
 
@@ -203,7 +203,7 @@ namespace Amalgama.View.Pages
 
         private void MastersSelect1_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            MessageTextBlock.Text = "Вы выбрали мастра Nikita!";
+            MessageTextBlock.Text = "Вы выбрали мастра Nikita";
             MessageTextBlock.Visibility = Visibility.Visible;
 
 
@@ -217,6 +217,11 @@ namespace Amalgama.View.Pages
 
 
             _timer.Start();
+        }
+
+        private void Txt3_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
         }
     }
 }

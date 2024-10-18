@@ -41,20 +41,19 @@
             <Grid Grid.Column="2" >
                 <Image Source="/Images/BannerRegisterPage.png"
                               Stretch="Fill"
-                              Width="850"
-                           Height="850"
+                              Width="860"
+                           Height="900"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Center"
                       />
                 <StackPanel
-                    Height="Auto"
-                    Width="600"
+                    Height="900"
+                    Width="650"
                         VerticalAlignment="Center"
                         HorizontalAlignment="Center">
                     <Image Source="/Images/recBannerBack.png"
-           Stretch="UniformToFill"
-           Opacity="0.95"
-                  />
+           Stretch="Fill"
+           Opacity="0.95"/>
                 </StackPanel>
                 <TextBlock x:Name="MessageTextBlock"
              Style="{StaticResource Content}"
@@ -70,8 +69,9 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="95"/>
                     <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="95"/>
+                    <RowDefinition Height="55"/>
+                    <RowDefinition Height="55"/>
                     <RowDefinition Height="150"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
@@ -91,7 +91,7 @@
                                 Content="+"
                                 x:Name="AgeAdd"
                                 Click="AgeAdd_Click"></Button>
-                        
+
                     </StackPanel>
                 </Grid>
                 <Grid Grid.Row="2">
@@ -213,35 +213,68 @@ HorizontalAlignment="Center">
                     </StackPanel>
                 </Grid>
                 <Grid Grid.Row="7">
+                    <StackPanel Orientation="Vertical"
+            Height="150" 
+           Width="385">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="35"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0">
+                                <StackPanel
+                Width="400"
+                                            Margin="0 5 0 0"
+                                           >
+                                    <TextBlock Text="Выбрать свободную дату:"
+                                             
+                                             Style="{StaticResource OtherTitle}"/>
+                                </StackPanel>
+                            </Grid>
+                            <Grid Grid.Row="1">
+                                <TextBox Style="{StaticResource TextBoxStyle}"
+            x:Name="Txt3"
+             Text="Выберите дату"
+              Margin="13 0 0 0"
+            MouseDown="Txt3_MouseDown"
+         />
+                            </Grid>
+                        </Grid>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="8">
                     <StackPanel Orientation="Horizontal"
                                 Height="150"
                                 Width="400"
                                 >
                         <Grid HorizontalAlignment="Center">
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="25"/>
+                                <RowDefinition Height="30"/>
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
                             <Grid Grid.Row="0">
                                 <TextBlock Text="Выбрать мастера:"
                                            Style="{StaticResource OtherTitle}"
-                                           Margin="10.75 0 0 0"/>
+                                           Margin="10.75 8.5 0 0"/>
                             </Grid>
                             <Grid Grid.Row="1">
-                                <StackPanel Orientation="Horizontal">
+                                <StackPanel Orientation="Horizontal"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                             Margin="70 0 0 0">
                                     <StackPanel>
-                                        <Border Margin="35 0 0 0"
-                                            x:Name="MastersSelect"
+                                        <Border x:Name="MastersSelect"
                                 MouseDown="MastersSelect_MouseDown"
-                            Style="{StaticResource MastersPfoto}"
-                                           >
-                                            <Image Source="/Images/laura.jpg" 
+                            Style="{StaticResource MastersPfoto}">
+                                            <Image Source="/Images/laura.jpg"
+                                                   HorizontalAlignment="Center"
                                Stretch="UniformToFill"
                                />
                                         </Border>
                                         <Image Source="/Images/laura.png" 
+                                               
                                            Height="10"
-                                               Margin="35 10 0 0"
+                                              Margin="0 5.75 0 0"
                                            Stretch="Uniform"/>
                                     </StackPanel>
                                     <StackPanel Width="35"></StackPanel>
@@ -251,11 +284,13 @@ HorizontalAlignment="Center">
      Style="{StaticResource MastersPfoto}">
                                             <Image Source="/Images/Nikita.jpg" 
 Stretch="UniformToFill"
+                                                   HorizontalAlignment="Center"
 />
                                         </Border>
-                                        <Image Source="/Images/NIKITA.png" 
+                                        <Image Source="/Images/NIKITA.png"
+                                               HorizontalAlignment="Center"
    Height="10"
-       Margin="0 10 0 0"
+      Margin="0 5.75 0 0"
    Stretch="Uniform"/>
                                     </StackPanel>
                                 </StackPanel>
@@ -263,14 +298,14 @@ Stretch="UniformToFill"
                         </Grid>
                     </StackPanel>
                 </Grid>
-                <Grid Grid.Row="8">
+                <Grid Grid.Row="9">
                     <Button x:Name="RecSucces"
                             Click="RecSucces_Click"
                             Style="{StaticResource ButtonSt1}"
                             Content="ЗАПИСАТЬСЯ"></Button>
                 </Grid>
             </Grid>
-            
+
             <Grid Grid.Column="4">
                 <Grid.Background>
                     <LinearGradientBrush StartPoint="0.5,0.5" EndPoint="0.5,0.5">
@@ -289,10 +324,10 @@ Stretch="UniformToFill"
                            HorizontalAlignment="Center"
                            MouseDown="Imageclosed_MouseDown"/>
             </Grid>
-          
+
 
         </Grid>
-        
+
     </Border>
 </Page> 
   

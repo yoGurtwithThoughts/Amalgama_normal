@@ -13,6 +13,7 @@
     <None Remove="Fonts\BrunoAce-Regular.ttf" />
     <None Remove="Fonts\Jura.ttf" />
     <None Remove="Images\AMALGAMA.png" />
+    <None Remove="Images\ArrowBackButton.png" />
     <None Remove="Images\BackBanner.png" />
     <None Remove="Images\bannerbackground.png" />
     <None Remove="Images\BannerRegisterPage.png" />
@@ -27,11 +28,18 @@
     <None Remove="Images\mBanner.png" />
     <None Remove="Images\Nikita.jpg" />
     <None Remove="Images\NIKITA.png" />
+    <None Remove="Images\PIRSING.png" />
     <None Remove="Images\recBannerBack.png" />
     <None Remove="Images\RightImage.png" />
+    <None Remove="Images\TATOO.png" />
+    <None Remove="Images\tattooremoval.png" />
+    <None Remove="Images\y.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Images\ArrowBackButton.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Images\BackBanner.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
@@ -96,10 +104,22 @@
     <Resource Include="Images\NIKITA.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Images\PIRSING.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Images\recBannerBack.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\RightImage.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\TATOO.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\tattooremoval.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\y.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

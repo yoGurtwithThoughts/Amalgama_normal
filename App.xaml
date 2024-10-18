@@ -20,6 +20,9 @@
                 <ResourceDictionary Source="/Styles/OtherTitle.xaml"/>
                 <ResourceDictionary Source="/Styles/TextBoxStyle.xaml"/>
                 <ResourceDictionary Source="/Styles/MastersPfotoContainer.xaml"/>
+                <ResourceDictionary Source="/Styles/ArrowBackButton.xaml"/>
+                <ResourceDictionary Source="/Styles/YslugiBlock.xaml"/>
+
             </ResourceDictionary.MergedDictionaries>
            
         </ResourceDictionary>
