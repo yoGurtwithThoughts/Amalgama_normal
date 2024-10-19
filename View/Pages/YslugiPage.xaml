@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:Amalgama.View.Pages"
       mc:Ignorable="d" 
       Background="Transparent"
-      Loaded="Page_Loaded"
+      Loaded="Page_Loaded1"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="YslugiPage">
     <Border>
@@ -66,12 +66,15 @@
                         </Canvas>
                     </StackPanel>
                 </Grid>
-                <Grid Grid.Row="1">
+                <Grid Grid.Row="1" VerticalAlignment="Center">
                     <Canvas>
                         <Border Style="{StaticResource YslugiBorder}"
                                     Canvas.Left="27"
-                                    Canvas.Top="25"
-                                x:Name="Y1">
+                                    Canvas.Top="50"
+                                    x:Name="Y1">
+                            <Border.RenderTransform>
+                                <TranslateTransform  X="-100" Y="0" />
+                            </Border.RenderTransform>
                             <Border.Effect>
                                 <DropShadowEffect BlurRadius="10" 
                                   Color="Gray" 
@@ -106,15 +109,18 @@
                     
                     
                 </Grid>
-                <Grid Grid.Row="2">
+                <Grid Grid.Row="2" VerticalAlignment="Center">
                     <Canvas>
                         <Border 
                             HorizontalAlignment="Left"
                             VerticalAlignment="Top"
                             Style="{StaticResource YslugiBorder}"
     Canvas.Left="50"
-    Canvas.Top="15"
+    Canvas.Top="40"
 x:Name="Y2">
+                            <Border.RenderTransform>
+                                <TranslateTransform  X="-150" Y="0" />
+                            </Border.RenderTransform>
                             <Border.Effect>
                                 <DropShadowEffect BlurRadius="10" 
   Color="Gray" 
@@ -147,15 +153,18 @@ x:Name="Y2">
                         </Border>
                     </Canvas>
                 </Grid>
-                <Grid Grid.Row="3">
+                <Grid Grid.Row="3" VerticalAlignment="Center">
                     <Canvas>
                         <Border 
                             HorizontalAlignment="Left"
                             VerticalAlignment="Top"
                             Style="{StaticResource YslugiBorder}"
                             Canvas.Left="75"
-                            Canvas.Top="15"
+                            Canvas.Top="30"
                             x:Name="Y3">
+                            <Border.RenderTransform>
+                                <TranslateTransform  X="-200" Y="0" />
+                            </Border.RenderTransform>
                             <Border.Effect>
                                 <DropShadowEffect BlurRadius="10" 
                                                   Color="Gray" 
@@ -193,12 +202,17 @@ x:Name="Y2">
                 <StackPanel
                     HorizontalAlignment="Right"
                     VerticalAlignment="Center">
-                   <Image Source="/Images/y.png"
-                         Height="500"
-                           Width="500"
+                    <Image Source="/Images/y.png"
+                         Height="800"
+                           Width="800"
+                           x:Name="imgAinimated"
+                          Stretch="Uniform"
                           HorizontalAlignment="Right"
-                          VerticalAlignment="Center"/>
-
+                          VerticalAlignment="Stretch">
+                        <Image.RenderTransform>
+                            <TranslateTransform  X="450" Y="0" />
+                        </Image.RenderTransform>
+                    </Image>
                 </StackPanel>
 
             </Grid>
@@ -211,6 +225,13 @@ x:Name="Y2">
                         </LinearGradientBrush.GradientStops>
                     </LinearGradientBrush>
                 </Grid.Background>
+                <Image x:Name="Close"
+MouseDown="Close_MouseDown_1"
+Source="/Images/Closed.png"
+            Height="15"
+            Width="15"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"/>
             </Grid>
 
         </Grid>

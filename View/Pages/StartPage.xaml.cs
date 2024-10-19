@@ -311,6 +311,7 @@ namespace Amalgama.View.Pages
             var borderStoryboard = new Storyboard();
             borderStoryboard.Children.Add(borderFadeInAnimation);
             borderStoryboard.Children.Add(borderTranslateAnimation);
+            //strart animation
             textBlockStoryboard.Begin(this);
             backgroundStoryboard.Begin(this);
             bannerStoryboard.Begin(this);

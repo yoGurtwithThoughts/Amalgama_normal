@@ -31,8 +31,10 @@
     <None Remove="Images\PIRSING.png" />
     <None Remove="Images\recBannerBack.png" />
     <None Remove="Images\RightImage.png" />
+    <None Remove="Images\Slice1.png" />
     <None Remove="Images\TATOO.png" />
     <None Remove="Images\tattooremoval.png" />
+    <None Remove="Images\TBold.png" />
     <None Remove="Images\y.png" />
   </ItemGroup>
 
@@ -113,10 +115,16 @@
     <Resource Include="Images\RightImage.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Images\Slice1.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Images\TATOO.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\tattooremoval.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\TBold.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\y.png">
