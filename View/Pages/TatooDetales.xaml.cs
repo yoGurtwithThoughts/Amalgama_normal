@@ -198,5 +198,30 @@ namespace Amalgama.View.Pages
                 _textTimer3.Stop();
             }
         }
+
+        private void PricewWork_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void PriceWork_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void PriceA_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void PriceE_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void Closes_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }

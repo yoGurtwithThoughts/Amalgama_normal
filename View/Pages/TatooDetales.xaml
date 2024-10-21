@@ -19,8 +19,8 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="45"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="25"/>
             <RowDefinition Height="105"/>
-            <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
         <Grid Grid.Column="0" Grid.RowSpan="4">
             <Grid.Background>
@@ -44,7 +44,7 @@
                     <TranslateTransform Y="0" X="-50"/>
                 </Image.RenderTransform>
             </Image>
-            
+
         </Grid>
         <Grid Grid.Column="2"
               Grid.Row="1">
@@ -90,7 +90,7 @@
             <Grid Grid.Row="2">
                 <Border>
                     <StackPanel Orientation="Vertical">
-                       <TextBlock Style="{StaticResource OtherTxt}"
+                        <TextBlock Style="{StaticResource OtherTxt}"
                 x:Name="WriteTxt2"
                 TextWrapping="Wrap"
                 MaxHeight="250"
@@ -98,21 +98,120 @@
                 HorizontalAlignment="Left"/>
                     </StackPanel>
                 </Border>
-
             </Grid>
             <Grid Grid.Row="3">
-                <Border>
-                    <StackPanel Orientation="Vertical">
+                <Border VerticalAlignment="Top">
+                    <StackPanel Orientation="Vertical" VerticalAlignment="Top">
                         <TextBlock Style="{StaticResource OtherTxt}"
-    x:Name="WriteTxt3"
-    TextWrapping="Wrap"
-    MaxHeight="250"
-    VerticalAlignment="Top"
-    HorizontalAlignment="Left"/>
+                                   x:Name="WriteTxt3"
+                                   TextWrapping="Wrap"
+                                   MaxHeight="350"
+                                   VerticalAlignment="Top"
+                                   HorizontalAlignment="Left"/>
                     </StackPanel>
                 </Border>
-
             </Grid>
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="4" 
+              Grid.ColumnSpan="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="45"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="45"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="105"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1">
+                <Canvas>
+                    <Border x:Name="PriceWork"
+                MouseDown="PriceWork_MouseDown"
+                Height="95"
+                Width="150"
+                BorderBrush="Gray"
+                BorderThickness="0.35"
+                >
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="3 часа работы"
+                           Style="{StaticResource Content}" 
+                           TextAlignment="Center"
+                          TextWrapping="Wrap"
+                           Margin="0 15 0 0"/>
+                            <TextBlock Text="3000 руб."
+                           Style="{StaticResource YslugiTitle}" 
+                           TextAlignment="Center"
+                           TextWrapping="Wrap"
+                           VerticalAlignment="Center"
+                           />
+                        </StackPanel>
+                    </Border>
+                </Canvas>
+            </Grid>
+            <Canvas Grid.Column="3">
+                <Border x:Name="PricA"
+                MouseDown="PriceA_MouseDown"
+                Height="95"
+                Width="150"
+                BorderBrush="Gray"
+                BorderThickness="0.35"
+                >
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="Анастезия"
+               Style="{StaticResource Content}" 
+               TextAlignment="Center"
+              TextWrapping="Wrap"
+               Margin="0 15 0 0"/>
+                        <TextBlock Text="от 500 руб."
+               Style="{StaticResource YslugiTitle}" 
+               TextAlignment="Center"
+               TextWrapping="Wrap"
+               VerticalAlignment="Center"
+               />
+                    </StackPanel>
+                </Border>
+            </Canvas>
+            <Canvas Grid.Column="5">
+                <Border x:Name="PricE"
+                        MouseDown="PriceE_MouseDown"
+                        Height="95"
+                        Width="150"
+                        BorderBrush="Gray"
+                        BorderThickness="0.35"
+                        >
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="Разработка эскиза
+ татуировки"
+               Style="{StaticResource Content}" 
+               TextAlignment="Center"
+              TextWrapping="Wrap"
+               Margin="0 10 0 0"/>
+                        <TextBlock Text="Бесплатно"
+               Style="{StaticResource YslugiTitle}" 
+               TextAlignment="Center"
+               TextWrapping="Wrap"
+               VerticalAlignment="Center"
+               />
+                    </StackPanel>
+                </Border>
+            </Canvas>
+        </Grid>
+        <Grid Grid.Column="3" Grid.RowSpan="4">
+            <Image x:Name="Closes"
+MouseDown="Closes_MouseDown"
+Source="/Images/Closed.png"
+            Height="15"
+            Width="15"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"/>
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0.5,0.5" EndPoint="0.5,0.5">
+                    <LinearGradientBrush.GradientStops>
+                        <GradientStop Color="#B8B8B8" Offset="0.15"/>
+                        <GradientStop Color="#DCDCDC" Offset="1.95"/>
+                    </LinearGradientBrush.GradientStops>
+                </LinearGradientBrush>
+            </Grid.Background>
         </Grid>
     </Grid>
 </Page>
