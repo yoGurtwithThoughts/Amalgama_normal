@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using static Amalgama.Core.Navigation;
 
 namespace Amalgama.View.Pages
 {
@@ -223,5 +224,11 @@ namespace Amalgama.View.Pages
         {
             Application.Current.Shutdown();
         }
+
+        private void RCButton_Click(object sender, RoutedEventArgs e)
+        {
+            CoreNavigate.NavigatorCore.Navigate(new RecordPage());
+        
+         }
     }
 }

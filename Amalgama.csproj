@@ -28,6 +28,7 @@
     <None Remove="Images\mBanner.png" />
     <None Remove="Images\Nikita.jpg" />
     <None Remove="Images\NIKITA.png" />
+    <None Remove="Images\PircBack.png" />
     <None Remove="Images\PIRSING.png" />
     <None Remove="Images\recBannerBack.png" />
     <None Remove="Images\RightImage.png" />
@@ -104,6 +105,9 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\NIKITA.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\PircBack.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\PIRSING.png">

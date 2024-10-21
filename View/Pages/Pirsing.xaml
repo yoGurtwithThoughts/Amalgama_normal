@@ -5,10 +5,83 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Amalgama.View.Pages"
       mc:Ignorable="d" 
+      Background="#F3F3F3"
+      Loaded="Page_Loaded"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Pirsing">
-
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="35"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="35"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="105"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Column="0" Grid.RowSpan="4">
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0.5,0.5" EndPoint="0.5,0.5">
+                    <LinearGradientBrush.GradientStops>
+                        <GradientStop Color="#B8B8B8" Offset="0.15"/>
+                        <GradientStop Color="#DCDCDC" Offset="1.95"/>
+                    </LinearGradientBrush.GradientStops>
+                </LinearGradientBrush>
+            </Grid.Background>
+        </Grid>
+        <Grid Grid.Column="4" Grid.RowSpan="4">
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0.5,0.5" EndPoint="0.5,0.5">
+                    <LinearGradientBrush.GradientStops>
+                        <GradientStop Color="#B8B8B8" Offset="0.15"/>
+                        <GradientStop Color="#DCDCDC" Offset="1.95"/>
+                    </LinearGradientBrush.GradientStops>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Image x:Name="Closer"
+                   MouseDown="Closer_MouseDown"
+                   Source="/Images/Closed.png"
+                   Height="15"
+                   Width="15"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Top"/>
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Image Source="/Images/PircBack.png" 
+                   Stretch="Uniform"
+                   Height="450"
+                       HorizontalAlignment="Left">
+                <Image.Effect>
+                    <DropShadowEffect BlurRadius="10" 
+                 Color="Gray" 
+                 Direction="315" 
+                 ShadowDepth="5" 
+                 Opacity="0.25"/>
+                </Image.Effect>
+            </Image>
+        </Grid>
+        <Grid Grid.Column="2" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="250"/>
+                <RowDefinition Height="150"/>
+                <RowDefinition Height="250"/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Vertical" Grid.Row="0">
+                <TextBlock x:Name="TxtWrite"
+                           Style="{StaticResource OtherTxt}"
+                           TextWrapping="Wrap"
+                           FontSize="15"
+                           MaxHeight="250"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Grid.Row="3">
+                <TextBlock x:Name="TxtWrite1"
+                Style="{StaticResource OtherTxt}"
+                TextWrapping="Wrap"
+                           FontSize="15"
+                MaxHeight="250"/>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Page>
