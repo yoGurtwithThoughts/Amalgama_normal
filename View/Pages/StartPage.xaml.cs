@@ -25,48 +25,84 @@ namespace Amalgama.View.Pages
     {
         private DispatcherTimer _timer;
         private int _contentIndex;
+        private List<Ellipse> _dots;
         private List<UIElement> _contentItems;
         private string[] _messages = { "1", "2", "3", "4" };
-        private string[] _colorsHex = { "#840000", "#D9D9D9", "#D9D9D9", "#D9D9D9" };
+        
 
         public StartPage()
         {
             InitializeComponent();
+            InitializeDots();
             InitializeTimer();
-            CreateCircles();
             InitializeContentItems();
             TextBlock textBlock = new TextBlock();
         }
-
-        private void CreateCircles()
+        private void InitializeDots()
         {
-           
-                for (int i = 0; i < _colorsHex.Length; i++)
+            _dots = new List<Ellipse>(); // Инициализация списка точек
+            DotsPanel.Children.Clear();  // Очищаем контейнер точек
+
+            int totalDots = 5;  // Количество точек (это можно настроить)
+
+            // Создаем точки
+            for (int i = 0; i < totalDots; i++)
+            {
+                Ellipse dot = new Ellipse
                 {
-                    
-                    Ellipse ellipse = new Ellipse
-                    {
-                        Width = 50,
-                        Height = 50,
-                        Fill = (SolidColorBrush)new BrushConverter().ConvertFromString(_colorsHex[i]),
-                        Margin = new Thickness(0.5)
-                    };
-                    CirclesPanel.Children.Add(ellipse);
-                }
+                    Width = 10,
+                    Height = 10,
+                    Stroke = (Brush)new BrushConverter().ConvertFrom("#A6A6A6"), // Цвет границы
+                    StrokeThickness = 2,  // Толщина границы
+                    Margin = new Thickness(5) // Отступы между точками
+                };
 
+                _dots.Add(dot); // Добавляем точку в список
+                DotsPanel.Children.Add(dot); // Добавляем точку в контейнер
+            }
+
+            // Устанавливаем первую точку активной
+            if (_dots.Count > 0)
+            {
+                _dots[0].Fill = (Brush)new BrushConverter().ConvertFrom("#840000"); // Первая точка красная (активная)
+            }
         }
-        private void StartTimer()
+
+        private void UpdateDots()
         {
+            for (int i = 0; i < _dots.Count; i++)
+            {
+                // Устанавливаем цвет границы для каждой точки
+                _dots[i].Stroke = (Brush)new BrushConverter().ConvertFrom("#A6A6A6"); // Цвет границы
+
+                // Устанавливаем цвет заливки для активной и неактивной точки
+                if (i == _contentIndex)
+                {
+                    _dots[i].Fill = (Brush)new BrushConverter().ConvertFrom("#840000"); // Красный для активной точки
+                }
+                else
+                {
+                    _dots[i].Fill = Brushes.Transparent; // Прозрачная заливка для неактивной точки
+                }
+            }
+        }
+
+
+        private void StartTimer()
+            {
             _timer = new DispatcherTimer();
             _timer.Interval = TimeSpan.FromSeconds(2); 
             _timer.Tick += UpdateText;
             _timer.Start();
+          
 
         }
+        
         private void UpdateText(object? sender, EventArgs e)
         {
             ContentTxt.Text = _messages[_contentIndex];
             _contentIndex = (_contentIndex + 1) % _messages.Length;
+            UpdateDots();
         }
 
 
@@ -84,13 +120,44 @@ namespace Amalgama.View.Pages
                 new Run("\nТатуировщики рекомендуют делать татуировки, а также пирсинг, не в жаркое время года, т. е. осенью, зимой, весной!")
             }
         },
-        new TextBlock
-        {
-            Text = "New content",
-            TextWrapping = TextWrapping.Wrap,
-            Style = titleMainStyle
+      new TextBlock { TextWrapping = TextWrapping.Wrap,
+            Style = titleMainStyle,
+            Inlines =
+            {
+                new Run("После сеанса") { FontWeight = FontWeights.Bold },
+                new LineBreak(),
+                new Run("\nПосле сеанса не стоит планировать дел, так как процесс нанесения тату " +
+                "- скорее всего организм будет испытывать стресс и вам нужно будет восстановиться")
+            }
         },
-            new TextBlock { Text = "New content ", TextWrapping=TextWrapping.Wrap , Style = titleMainStyle  },
+        new TextBlock { TextWrapping = TextWrapping.Wrap,
+            Style = titleMainStyle,
+            Inlines =
+            {
+                new Run("Подготовка к сеансу") { FontWeight = FontWeights.Bold },
+                new LineBreak(),
+                new Run("\nНе стоит идти к мастеру уставшим, обезательно хорошо выспитесь перед сеансом.")
+            }
+        },
+         new TextBlock { TextWrapping = TextWrapping.Wrap,
+            Style = titleMainStyle,
+            Inlines =
+            {
+                new Run("Что можно, а что нельзя есть?") { FontWeight = FontWeights.Bold },
+                new LineBreak(),
+                new Run("\nПеред сеансом обязательно плотно покушать, можно взять что то сладкое на перекус; перед сеансом категорически " +
+                "запрещается принимать алкогольные напитки и кофе в больших количествах.")
+            }
+        },
+          new TextBlock { TextWrapping = TextWrapping.Wrap,
+            Style = titleMainStyle,
+            Inlines =
+            {
+                new Run("Самое главное!") { FontWeight = FontWeights.Bold },
+                new LineBreak(),
+                new Run("\nСлушать и соблюдать все указания мастера, ведь для него заживление вашей татуировки так же важно.")
+            }
+        },
             };
 
         }  
@@ -104,13 +171,15 @@ namespace Amalgama.View.Pages
 
         private void Timer_Tick(object sender, EventArgs e)
         {
+            _contentIndex = (_contentIndex + 1) % _dots.Count;
+            Dispatcher.BeginInvoke(new Action(() => UpdateDots()));
             _contentIndex = (_contentIndex + 1) % _contentItems.Count;
             Contentstack.Children.Clear();
             Contentstack.Children.Add(_contentItems[_contentIndex]);
             _contentIndex = (_contentIndex + 1) % _contentItems.Count;
         }
-       
 
+      
         private void DraverButton_MouseDown(object sender, MouseButtonEventArgs e)
         {
 

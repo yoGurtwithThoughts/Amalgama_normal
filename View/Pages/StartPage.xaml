@@ -184,13 +184,18 @@
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Center">
                         <TextBlock x:Name="ContentTxt"/>
-                        <StackPanel x:Name="CirclesPanel" 
-                                    Orientation="Horizontal" 
-                                    HorizontalAlignment="Center"/>
+                       
                         <StackPanel.RenderTransform>
                             <TranslateTransform x:Name="TextBlockTranslateTransform1" X="-50" Y="0" />
                         </StackPanel.RenderTransform>
                     </StackPanel>
+                    <StackPanel x:Name="DotsPanel" 
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Bottom" 
+                    Orientation="Horizontal"
+                     Margin="0 20 0 0"
+                    Height="25" Width="Auto"/>
+                    
                 </Grid>
                 <Grid Grid.Row="2">
                     <StackPanel HorizontalAlignment="Center"
